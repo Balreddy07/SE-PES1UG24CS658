@@ -1,0 +1,222 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="CEN-component" name="UML Component Diagram">
+    <mxGraphModel dx="1717" dy="937" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=2;dashed=1;verticalAlign=top;align=left;spacingTop=8;fontStyle=1;fontSize=16;" value="" vertex="1">
+          <mxGeometry height="763" width="1402.09" x="150" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="ingest" parent="boundary" style="shape=mxgraph.uml.component;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;strokeWidth=1.5;" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;&amp;lt;&amp;gt;&lt;br&gt;Audit Log Ingestion&lt;br&gt;Service&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80.86" width="184.91" x="491.03" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="validate" parent="boundary" style="shape=mxgraph.uml.component;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;strokeWidth=1.5;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;&amp;lt;&amp;gt;&lt;br&gt;Audit Validation&lt;br&gt;Service&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80.86" width="195" x="839" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="mask" parent="boundary" style="shape=mxgraph.uml.component;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;strokeWidth=1.5;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;lt;&amp;gt;&lt;br&gt;PII Detection &amp;amp; Masking&lt;br&gt;Service&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80.86" width="184.91" x="1175" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="storage" parent="boundary" style="shape=mxgraph.uml.component;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;strokeWidth=1.5;" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;&amp;lt;&amp;gt;&lt;br&gt;Audit Storage&lt;br&gt;Service&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100.06557377049182" width="276.0588235294117" x="269.46823529411756" y="439.9988170836929" as="geometry" />
+        </mxCell>
+        <mxCell id="query" parent="boundary" style="shape=mxgraph.uml.component;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;strokeWidth=1.5;" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;&amp;lt;&amp;gt;&lt;br&gt;Audit Query &amp;amp; Filter&lt;br&gt;Service&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100.06557377049182" width="246.99999999999997" x="705.0035294117646" y="304.0036065573771" as="geometry" />
+        </mxCell>
+        <mxCell id="export" parent="boundary" style="shape=mxgraph.uml.component;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;strokeWidth=1.5;" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;&amp;lt;&amp;gt;&lt;br&gt;Audit Export&lt;br&gt;Service&lt;/font&gt;" vertex="1">
+          <mxGeometry height="100.06557377049182" width="290.5882352941177" x="1075" y="440.0036065573771" as="geometry" />
+        </mxCell>
+        <mxCell id="hash" parent="boundary" style="shape=mxgraph.uml.component;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;strokeWidth=1.5;" value="&lt;font style=&quot;font-size: 19px;&quot;&gt;&amp;lt;&amp;gt;&lt;br&gt;SHA-256 Integrity &amp;amp;&lt;br&gt;Verification Service&lt;/font&gt;" vertex="1">
+          <mxGeometry height="106.31967213114754" width="305.11764705882354" x="675.9435294117645" y="629.9993442622952" as="geometry" />
+        </mxCell>
+        <mxCell id="if2" parent="boundary" style="shape=mxgraph.uml2.lollipop;html=1;strokeWidth=1.2;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Validation API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="45" width="45" x="385" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="if1" parent="boundary" style="shape=mxgraph.uml2.lollipop;html=1;strokeWidth=1.2;direction=south;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Audit Log API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="45" width="45" x="40" y="72" as="geometry" />
+        </mxCell>
+        <mxCell id="if3" parent="boundary" style="shape=mxgraph.uml2.lollipop;html=1;strokeWidth=1.2;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;PII Masking API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="45" width="45" x="730" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="boundary" style="text;html=1;align=left;verticalAlign=middle;fontSize=10;whiteSpace=wrap;" value="&lt;p&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Solid arrow = component/service data flow&lt;/font&gt;&lt;/p&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Dashed open arrow = actor usage/dependency&lt;br&gt;Component box = UML component&lt;br&gt;Lollipop/socket = provided/required interface&lt;/font&gt;&lt;br/&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Ball = provided interface; socket = required interface; square = port&lt;/font&gt;" vertex="1">
+          <mxGeometry height="106.32" width="305.12" x="35" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="req_auth" parent="boundary" style="shape=arc;html=1;whiteSpace=wrap;direction=east;startAngle=270;endAngle=90;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="24" width="20" x="295" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="req_validation" parent="boundary" style="shape=arc;html=1;whiteSpace=wrap;direction=east;startAngle=270;endAngle=90;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="24" width="20" x="1040" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="req_masking" parent="boundary" style="shape=arc;html=1;whiteSpace=wrap;direction=east;startAngle=270;endAngle=90;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="24" width="20" x="1390" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="req_query" parent="boundary" style="shape=arc;html=1;whiteSpace=wrap;direction=east;startAngle=270;endAngle=90;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="24" width="20" x="1030" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="req_hash" parent="boundary" style="shape=arc;html=1;whiteSpace=wrap;direction=east;startAngle=270;endAngle=90;strokeWidth=1.2;" value="" vertex="1">
+          <mxGeometry height="24" width="20" x="1355" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="req_auth_lbl" parent="boundary" style="text;html=1;align=center;verticalAlign=middle;fontSize=8;" value="Auth" vertex="1">
+          <mxGeometry height="18" width="55" x="275" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="req_validation_lbl" parent="boundary" style="text;html=1;align=center;verticalAlign=middle;fontSize=8;" value="Validation" vertex="1">
+          <mxGeometry height="18" width="75" x="1010" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="req_masking_lbl" parent="boundary" style="text;html=1;align=center;verticalAlign=middle;fontSize=8;" value="PII Masking" vertex="1">
+          <mxGeometry height="18" width="80" x="1360" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="req_query_lbl" parent="boundary" style="text;html=1;align=center;verticalAlign=middle;fontSize=8;" value="Query" vertex="1">
+          <mxGeometry height="18" width="55" x="1005" y="355" as="geometry" />
+        </mxCell>
+        <mxCell id="req_hash_lbl" parent="boundary" style="text;html=1;align=center;verticalAlign=middle;fontSize=8;" value="Hash" vertex="1">
+          <mxGeometry height="18" width="55" x="1335" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="port_auth" parent="boundary" style="shape=rectangle;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="318" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="port_ingest" parent="boundary" style="shape=rectangle;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="675" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="port_validate" parent="boundary" style="shape=rectangle;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="1035" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="port_mask" parent="boundary" style="shape=rectangle;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="1360" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="port_storage" parent="boundary" style="shape=rectangle;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="540" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="port_query" parent="boundary" style="shape=rectangle;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="945" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="port_export" parent="boundary" style="shape=rectangle;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="1360" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="port_hash" parent="boundary" style="shape=rectangle;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="10" width="10" x="1010" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="6uvEx8bP2MCNs8y5vYkf-2" edge="1" parent="1" source="enterprise" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="enterprise" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=12;" value="Enterprise Application / Log Source" vertex="1">
+          <mxGeometry height="65" width="75" x="60" y="209.93" as="geometry" />
+        </mxCell>
+        <mxCell id="compliance" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=12;" value="Compliance Officer" vertex="1">
+          <mxGeometry height="80.86" width="75" x="1585" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="auditor" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=12;" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Security Auditor&lt;/font&gt;" vertex="1">
+          <mxGeometry height="88.86" width="75" x="1585" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Audit Log API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="22" width="105" x="235" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl3" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;" value="PII Masking API" vertex="1">
+          <mxGeometry height="22" width="130" x="705" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl4" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Storage API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="22" width="105" x="320" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl5" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Query API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="22" width="105" x="555" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl6" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Export API&lt;/font&gt;" vertex="1">
+          <mxGeometry height="22" width="105" x="805" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl7" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;" value="Hash / Verification API" vertex="1">
+          <mxGeometry height="22" width="145" x="570" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="ingest" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="validate" value="Validation API">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="validate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="mask" value="PII Masking API">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="mask" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="storage" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5hpA7U43u0yaQ53_dZw--1" connectable="0" parent="e4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.5527" y="2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="storage" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="query" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Query API&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="query" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="export" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;Export API&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="export" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="hash" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Hash / Verification API&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="compliance" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;strokeWidth=1.1;" target="auth" value="&amp;lt;&amp;lt;use&amp;gt;&amp;gt; Authenticate / Authorize">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="compliance" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;strokeWidth=1.1;" target="query" value="&amp;lt;&amp;lt;use&amp;gt;&amp;gt; Query / Filter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="compliance" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;strokeWidth=1.1;" target="export" value="&amp;lt;&amp;lt;use&amp;gt;&amp;gt; Generate Export">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="auditor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;strokeWidth=1.1;" target="auth" value="&amp;lt;&amp;lt;use&amp;gt;&amp;gt; Authenticate / Authorize">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="auditor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;strokeWidth=1.1;" target="query" value="&amp;lt;&amp;lt;use&amp;gt;&amp;gt; Query / Filter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="auditor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;strokeWidth=1.1;" target="export" value="&amp;lt;&amp;lt;use&amp;gt;&amp;gt; Generate Export">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="auditor" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=open;dashed=1;strokeWidth=1.1;" target="hash" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&amp;lt;&amp;lt;use&amp;gt;&amp;gt; Verify Export&lt;/font&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YhWKfd_mxSFfnnEwWodu-1" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.4464" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YhWKfd_mxSFfnnEwWodu-2" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.3443" y="-4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YhWKfd_mxSFfnnEwWodu-3" connectable="0" parent="e14" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.625" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6uvEx8bP2MCNs8y5vYkf-1" edge="1" parent="1" source="auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="ingest" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="225" y="168" as="sourcePoint" />
+            <mxPoint x="725" y="195" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YhWKfd_mxSFfnnEwWodu-8" connectable="0" parent="6uvEx8bP2MCNs8y5vYkf-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="0.0383" y="-5" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="6uvEx8bP2MCNs8y5vYkf-6" parent="1" style="whiteSpace=wrap;html=1;" value="&lt;span style=&quot;font-size: 16px; font-weight: 700; text-align: left;&quot;&gt;Centralized Audit Trail Compliance Engine&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 16px; font-weight: 700; text-align: left;&quot;&gt;Microservices Architecture&lt;/span&gt;" vertex="1">
+          <mxGeometry height="60" width="1395" x="153.54" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YhWKfd_mxSFfnnEwWodu-9" edge="1" parent="1" source="enterprise" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="auth" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="135" y="242" as="sourcePoint" />
+            <mxPoint x="641" y="239" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YhWKfd_mxSFfnnEwWodu-10" connectable="0" parent="YhWKfd_mxSFfnnEwWodu-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Text" vertex="1">
+          <mxGeometry relative="1" x="-0.1864" y="4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="auth" parent="1" style="shape=mxgraph.uml.component;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=12;strokeWidth=1.5;" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&amp;lt;&amp;gt;&lt;br&gt;Authentication &amp;amp; Authorization&lt;br&gt;Service&lt;/font&gt;" vertex="1">
+          <mxGeometry height="88.86" width="159.15" x="280" y="198" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="auth" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;strokeWidth=1.4;" target="ingest" value="Audit Log API">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
