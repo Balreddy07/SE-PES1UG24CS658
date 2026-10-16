@@ -1,51 +1,108 @@
 # Lab 5: Static Code Analysis — Restaurant Order System
 
-**Your file:** `restaurant_order_system.py`
+## 1. Objective
 
-Follow the lab handout for the full instructions.
+To improve Python code quality, security, and coding style using Pylint, Bandit, and Flake8. The lab involves identifying issues in the assigned program, fixing them, and verifying the improvements through static analysis.
 
-## About the program
+## 2. Project Overview
 
-A restaurant dining order billing and kitchen ticket manager. It places table orders, voids tickets, calculates promotional discounts, and exports active orders to kitchen printers.
+The Restaurant Order System is a Python program that manages restaurant table orders and kitchen tickets. Its functionality includes placing and voiding orders, checking table status, calculating discounted bills, generating ticket hashes and POS PINs, exporting orders to a text file, and summarizing pending orders.
 
-The code works, but only just. It has quality, style and security problems of the kind Pylint, Flake8 and Bandit are built to find.
+## 3. Static Analysis Tools
 
-## What to do
+- **Pylint:** Evaluates code quality, naming conventions, documentation, and potential programming errors.
+- **Bandit:** Detects potentially insecure coding patterns in Python programs.
+- **Flake8:** Checks Python code formatting and compliance with style guidelines.
 
-1. **Run it first** and read the output carefully:
-   ```bash
-   python restaurant_order_system.py
-   ```
-   It asks one question. Press Enter to use the default, then try a few inputs of your own. Not every problem in this file is something a tool will flag, so pay attention to output that looks wrong.
+## 4. Issues Identified and Fixes Applied
 
-2. **Install the tools:**
-   ```bash
-   pip install pylint bandit flake8
-   ```
+The original implementation contained multiple code-quality and security issues.
 
-3. **Run the analysis** and save the reports:
-   ```bash
-   pylint restaurant_order_system.py > pylint_report.txt
-   bandit -r restaurant_order_system.py > bandit_report.txt
-   flake8 restaurant_order_system.py > flake8_report.txt
-   ```
+| Tool | Issue identified | Fix applied |
+|---|---|---|
+| Pylint | Non-standard function names and missing docstrings | Adopted snake_case naming and added docstrings |
+| Pylint | Unused imports and variables | Removed unused code |
+| Bandit | Unsafe use of `eval()` | Replaced expression evaluation with validated discount-rate calculations |
+| Bandit | Weak MD5 hashing | Replaced MD5 with SHA-256 |
+| Bandit | Insecure random number generation for a POS PIN | Used Python's `secrets` module |
+| Bandit | Broad exception handling | Replaced it with a safer order-removal operation |
+| Bandit | Shell command execution | Replaced shell execution with file handling using `pathlib` |
+| Flake8 | Formatting and style violations | Corrected formatting, line lengths, and other style issues |
 
-4. **Document the issues** in `issues.md` using this table (at least 4 rows, high and medium severity first):
+The detailed issue table is available in `issue_table.md`.
 
-   | Issue | Type | Line(s) | Description | Fix Approach |
-   |-------|------|---------|-------------|--------------|
-   | ... | ... | ... | ... | ... |
+## 5. Before-and-After Analysis Results
 
-5. **Fix the code.** Fix at least 4 of the issues you documented, then rerun all three tools to confirm they are gone. Repeat until you are satisfied. The program should still do its job when you are done.
+The following results were obtained during local testing of the original and cleaned programs.
 
-6. **Reflect.** Answer the four reflection questions from the handout in `reflection.md`.
+| Tool | Before | After |
+|---|---|---|
+| Pylint | 4.81/10 | 10.00/10 |
+| Bandit | Security findings reported | No issues identified |
+| Flake8 | Style violations reported | No violations reported |
 
-## Deliverables
+The corresponding reports are included in this directory for comparison.
 
-1. `restaurant_order_system.py`: your cleaned version, with at least 4 issues fixed.
-2. `issues.md`: the completed issue table.
-3. `reflection.md`: your answers to the reflection questions.
+## 6. Setup and Execution
 
-**Target:** aim for a Pylint score above 9.5 on your final file. A perfect 10.00/10 is very good.
+### Create a virtual environment
 
-Be ready to explain the bugs you found and how you fixed them. You may be called on to present.
+```bash
+python -m venv venv
+```
+
+### Activate the environment on Windows PowerShell
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### Install the required tools
+
+```bash
+python -m pip install pylint bandit flake8
+```
+
+### Run the program
+
+```bash
+python restaurant_order_system.py
+```
+
+### Run Pylint
+
+```bash
+python -m pylint restaurant_order_system.py
+```
+
+### Run Bandit
+
+```bash
+python -m bandit -r restaurant_order_system.py
+```
+
+### Run Flake8
+
+```bash
+python -m flake8 restaurant_order_system.py
+```
+
+## 7. Repository Contents
+
+- `restaurant_order_system.py` — cleaned Python implementation.
+- `restaurant_order_system_before.py` — original implementation for comparison.
+- `pylint_report_before.txt` — initial Pylint report.
+- `pylint_report_after.txt` — final Pylint report.
+- `bandit_report_before.txt` — initial Bandit report.
+- `bandit_report_after.txt` — final Bandit report.
+- `flake8_report_before.txt` — initial Flake8 report.
+- `flake8_report_after.txt` — final Flake8 report.
+- `issue_table.md` — issues identified and corresponding fixes.
+- `reflection.md` — reflection on static code analysis.
+- `README.md` — project overview, setup instructions, and results.
+
+## 8. Conclusion
+
+Static code analysis helped identify and address security weaknesses, code-quality problems, and formatting violations in the Restaurant Order System. The cleaned implementation achieved a Pylint score of 10.00/10, no reported Bandit issues, and no Flake8 violations during local testing.
+
+The before-and-after reports provide evidence of the improvements made to the source code.
